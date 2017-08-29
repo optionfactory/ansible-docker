@@ -1,0 +1,8 @@
+galaxy_info:
+  author: optionfactory
+  description: docker base configuration (xenial)
+  company: optionfactory
+  license: BSD
+  min_ansible_version: 1.2
+  galaxy_tags: []
+dependencies: []

@@ -1,0 +1,8 @@
+ubuntu-aws
+=========
+
+License
+-------
+
+BSD
+

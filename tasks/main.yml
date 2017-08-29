@@ -1,0 +1,25 @@
+---
+- name: add docker repo
+  apt_repository:
+    filename: dockerrepo
+    repo: "deb https://apt.dockerproject.org/repo ubuntu-xenial main"
+- name: add docker repo key
+  apt_key:
+    keyserver: hkp://p80.pool.sks-keyservers.net:80
+    id: 58118E89F3A912897C070ADBF76221572C52609D
+- name: install docker-engine
+  apt:
+    name: docker-engine
+    state: present
+- group:
+    name: docker 
+    state: present
+- user:
+    name: ubuntu
+    append: yes
+    groups: docker    
+- name: ensure base services are started
+  service:
+    name: docker
+    state: started
+    enabled: yes
