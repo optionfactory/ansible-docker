@@ -1,4 +1,4 @@
-ubuntu-aws
+docker
 =========
 
 License
