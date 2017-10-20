@@ -7,6 +7,8 @@
   apt_key:
     keyserver: https://download.docker.com/linux/ubuntu/gpg
     id: 0EBFCD88
+- name: update apt cache
+  shell: apt update
 - name: install docker-ce
   apt:
     name: docker-ce
