@@ -1,5 +1,5 @@
 ---
-- name: add docker repo
+- name: remove old docker repo
   apt_repository:
     filename: dockerrepo
     state: absent
