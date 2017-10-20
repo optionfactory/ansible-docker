@@ -5,7 +5,7 @@
     repo: "deb https://download.docker.com/linux/ubuntu xenial stable"
 - name: add docker repo key
   apt_key:
-    keyserver: https://download.docker.com/linux/ubuntu/gpg
+    url: https://download.docker.com/linux/ubuntu/gpg
     id: 0EBFCD88
 - name: update apt cache
   shell: apt update
