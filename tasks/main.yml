@@ -2,14 +2,14 @@
 - name: add docker repo
   apt_repository:
     filename: dockerrepo
-    repo: "deb https://apt.dockerproject.org/repo ubuntu-xenial main"
+    repo: "deb https://download.docker.com/linux/ubuntu xenial stable"
 - name: add docker repo key
   apt_key:
-    keyserver: hkp://p80.pool.sks-keyservers.net:80
-    id: 58118E89F3A912897C070ADBF76221572C52609D
-- name: install docker-engine
+    keyserver: https://download.docker.com/linux/ubuntu/gpg
+    id: 0EBFCD88
+- name: install docker-ce
   apt:
-    name: docker-engine
+    name: docker-ce
     state: present
 - group:
     name: docker 
