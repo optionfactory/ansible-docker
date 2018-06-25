@@ -28,9 +28,16 @@
     name: docker
     state: present
 - user:
-    name: ubuntu
+    name: "{{ item }}"
     append: yes
     groups: docker
+  when: docker_users is defined
+  with_items: "{{ docker_users }}"
+- name: configure docker daemon
+  copy:
+    dest: "/etc/docker/daemon.json"
+    content: "{{ docker_daemon_json }}"
+  when: docker_daemon_json is defined
 - name: ensure base services are started
   service:
     name: docker
