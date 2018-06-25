@@ -38,6 +38,7 @@
     dest: "/etc/docker/daemon.json"
     content: "{{ docker_daemon_json }}"
   when: docker_daemon_json is defined
+  notify: "restart docker"
 - name: ensure base services are started
   service:
     name: docker
