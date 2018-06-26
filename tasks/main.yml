@@ -33,6 +33,12 @@
     groups: docker
   when: docker_users is defined
   with_items: "{{ docker_users }}"
+- name: creating docker configuration directory
+  file:
+    dest: "/etc/docker"
+    state: directory
+    mode: 0700
+  when: docker_daemon_json is defined
 - name: configure docker daemon
   copy:
     dest: "/etc/docker/daemon.json"
