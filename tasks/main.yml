@@ -3,7 +3,7 @@
   when: ansible_os_family == 'Debian'
   apt_repository:
     filename: dockerrepo
-    repo: "deb https://download.docker.com/linux/ubuntu xenial stable"
+    repo: "deb https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
 - name: add docker repo (Suse)
   when: ansible_os_family == 'Suse'
   shell: 'SUSEConnect -p sle-module-containers/12/x86_64'
